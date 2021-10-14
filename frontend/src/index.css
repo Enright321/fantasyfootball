@@ -1,0 +1,56 @@
+html {
+  height: 100%;
+}
+:root {
+  --primary: #393e46;
+  --primary-light: #505762;
+  --primary-dark: #22252a;
+  --light: #ddd;
+}
+
+a {
+  color: var(--light);
+  text-decoration: none !important;
+}
+
+.btn {
+  padding: 0rem 1rem;
+  background-color: aqua;
+  color: red;
+}
+
+a:hover {
+  color: black;
+}
+
+.header-color {
+  background-color: var(--primary-dark);
+}
+
+.bg {
+  background-color: var(--primary-light);
+}
+
+main {
+  min-height: 100vh;
+}
+
+.card {
+  background-color: var(--primary);
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+
+div.card-body {
+  padding: 10px !important;
+}
