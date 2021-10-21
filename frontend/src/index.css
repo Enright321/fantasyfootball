@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Spartan:wght@100&display=swap');
+
 html {
   height: 100%;
 }
@@ -8,15 +11,23 @@ html {
   --light: #ddd;
 }
 
+.font {
+  font-family: 'Spartan', sans-serif;
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Permanent Marker', cursive;
+}
+
 a {
   color: var(--light);
   text-decoration: none !important;
-}
-
-.btn {
-  padding: 0rem 1rem;
-  background-color: aqua;
-  color: red;
 }
 
 a:hover {
@@ -43,6 +54,11 @@ main {
 ul {
   list-style: none;
   padding: 0;
+  padding-inline-start: 0;
+}
+
+ul.pagination {
+  margin: 0 !important;
 }
 
 .logo {
@@ -53,4 +69,14 @@ ul {
 
 div.card-body {
   padding: 10px !important;
+}
+
+div.row {
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
 }
