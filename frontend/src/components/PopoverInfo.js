@@ -6,7 +6,7 @@ const PopoverInfo = ({ info, title }) => {
   const target = useRef(null);
 
   return (
-    <>
+    <div className='popover_info'>
       <div
         style={{ margin: '0 1rem', cursor: 'pointer' }}
         ref={target}
@@ -24,7 +24,7 @@ const PopoverInfo = ({ info, title }) => {
           </Tooltip>
         )}
       </Overlay>
-    </>
+    </div>
   );
 };
 

@@ -80,3 +80,11 @@ div.row {
   align-items: center;
   /* justify-content: center; */
 }
+
+/* Media Queries */
+@media only screen and (max-width: 425px) {
+  /*Small smartphones [325px -> 425px]*/
+  .popover_info {
+    display: none;
+  }
+}
