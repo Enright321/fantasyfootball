@@ -57,6 +57,11 @@ const Header = () => {
                 <i>Free Agents</i>
               </Nav.Link>
             </LinkContainer>
+            <LinkContainer to='/about'>
+              <Nav.Link className='links'>
+                <i>About</i>
+              </Nav.Link>
+            </LinkContainer>
           </Nav>
         </Container>
       </Navbar>

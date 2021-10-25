@@ -6,6 +6,7 @@ import HomeScreen from './screens/HomeScreen';
 import FreeAgentsScreen from './screens/FreeAgentsScreen';
 import TeamDetailsScreen from './screens/TeamDetailsScreen';
 import MatchScoresScreen from './screens/MatchScoresScreen';
+import AboutScreen from './screens/AboutScreen';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path='/freeagents' component={FreeAgentsScreen} />
           <Route path='/gamescores' component={GameScoresScreen} />
           <Route path='/matchscores' component={MatchScoresScreen} />
+          <Route path='/about' component={AboutScreen} />
         </Container>
       </main>
     </Router>
