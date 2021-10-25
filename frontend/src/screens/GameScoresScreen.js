@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import PopoverInfo from '../components/PopoverInfo';
-import gameScores from '../gameScores.json';
 import Pagination from '../components/Pagination';
 import GameScores from '../components/GameScores';
+import axios from 'axios';
 
 const GameScoresScreen = () => {
   const [scores, setScores] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(4);
+  const [itemsPerPage] = useState(6);
 
   useEffect(() => {
-    const fetchData = () => {
+    const fetchData = async () => {
       setLoading(true);
-      setScores(gameScores);
+      const { data } = await axios.get('/api/gameScores');
+      setScores(data);
       setLoading(false);
     };
     fetchData();

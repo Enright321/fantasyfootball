@@ -2,22 +2,33 @@ import React, { useState, useEffect } from 'react';
 import PopoverInfo from '../components/PopoverInfo';
 import WatchList from '../components/WatchList';
 import Pagination from '../components/Pagination';
-import watchList from '../watchList.json';
-import percentOwned from '../percentOwned.json';
+
 import PercentOwned from '../components/PercentOwned';
+// import FreeAgentQB from '../components/FreeAgentQB';
+
+import axios from 'axios';
 
 const PlayersToWatchScreen = () => {
   const [freeAgents, setFreeAgents] = useState([]);
   const [freeAgentsOwned, setFreeAgentsOwned] = useState([]);
+  // const [qb, setQB] = useState([]);
+
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(4);
 
   useEffect(() => {
-    setLoading(true);
-    setFreeAgents(watchList);
-    setFreeAgentsOwned(percentOwned);
-    setLoading(false);
+    const fetchData = async () => {
+      setLoading(true);
+      const onTheRise = await axios.get('/api/onTheRise');
+      const ownedAbove = await axios.get('/api/ownedAbove');
+      // const qbRanks = await axios.get('/api/freeAgentQB');
+      setFreeAgents(onTheRise.data);
+      setFreeAgentsOwned(ownedAbove.data);
+      // setQB(qbRanks.data);
+      setLoading(false);
+    };
+    fetchData();
   }, []);
 
   // Get Current Posts
@@ -28,6 +39,7 @@ const PlayersToWatchScreen = () => {
     indexOfFirstPost,
     indexOfLastPost
   );
+  // const qbWatch = qb.slice(indexOfFirstPost, indexOfLastPost);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -46,16 +58,21 @@ const PlayersToWatchScreen = () => {
         <PopoverInfo info={playersInfo} title={playersTitle} />
       </div>
       <WatchList freeAgents={currentFreeAgents} loading={loading} />
-      <Pagination
+      {/* <Pagination
         itemsPerPage={itemsPerPage}
         totalCards={freeAgents.length}
         paginate={paginate}
-      />
+      /> */}
       <div className='flex' style={{ paddingTop: '1rem' }}>
         <h1>Owned Above 50%</h1>
         <PopoverInfo info={percentOwnedInfo} title={percentOwnedTitle} />
       </div>
+
       <PercentOwned freeAgentsOwned={ownedFreeAgents} loading={loading} />
+
+      {/* <h2>QB Watchlist</h2> */}
+      {/* <FreeAgentQB qb={qbWatch} loading={loading} /> */}
+
       <Pagination
         itemsPerPage={itemsPerPage}
         totalCards={freeAgentsOwned.length}

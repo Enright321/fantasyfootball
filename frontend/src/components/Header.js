@@ -21,11 +21,6 @@ const Header = () => {
               <Nav className='ms-auto'>
                 <LinkContainer to='/' style={{ color: '#55acee' }}>
                   <Nav.Link className='links'>
-                    <i>All Time</i>
-                  </Nav.Link>
-                </LinkContainer>
-                <LinkContainer to='/' style={{ color: '#55acee' }}>
-                  <Nav.Link className='links'>
                     <i>2021</i>
                   </Nav.Link>
                 </LinkContainer>
@@ -50,6 +45,11 @@ const Header = () => {
             <LinkContainer to='/gamescores'>
               <Nav.Link className='links'>
                 <i>Game Scores</i>
+              </Nav.Link>
+            </LinkContainer>
+            <LinkContainer to='/matchscores'>
+              <Nav.Link className='links'>
+                <i>Match Scores</i>
               </Nav.Link>
             </LinkContainer>
             <LinkContainer to='/freeagents'>

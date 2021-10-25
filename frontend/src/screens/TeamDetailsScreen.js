@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
-import teamRanks from '../teamRanks.json';
+import axios from 'axios';
 
 const TeamDetailsScreen = ({ match }) => {
   const [teamStats, setTeamStats] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const fetchData = () => {
+    const fetchData = async () => {
       setLoading(true);
-      setTeamStats(teamRanks);
+      const { data } = await axios.get('/api/teamRanks');
+      setTeamStats(data);
       setLoading(false);
     };
     fetchData();
-  }, [teamStats]);
+  }, []);
 
   const urlMatch = window.location.href;
   const urlId = parseInt(urlMatch.split('/')[4]);

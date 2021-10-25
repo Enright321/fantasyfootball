@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import teamRanks from '../teamRanks.json';
 import Teams from '../components/Teams';
 import Pagination from '../components/Pagination';
 import PopoverInfo from '../components/PopoverInfo';
 import { Bar } from 'react-chartjs-2';
+import axios from 'axios';
 
 const HomeScreen = () => {
   const [teams, setTeams] = useState([]);
@@ -12,9 +12,10 @@ const HomeScreen = () => {
   const [itemsPerPage] = useState(4);
 
   useEffect(() => {
-    const fetchData = () => {
+    const fetchData = async () => {
       setLoading(true);
-      setTeams(teamRanks);
+      const teamRanks = await axios.get('/api/teamRanks');
+      setTeams(teamRanks.data);
       setLoading(false);
     };
     fetchData();
@@ -40,7 +41,7 @@ const HomeScreen = () => {
   teams.map((x) => pf.push(x.regularSeasonPointsFor));
   teams.map((x) => pa.push(x.regularSeasonPointsAgainst));
 
-  const state = {
+  const chart = {
     labels: teamNames,
     datasets: [
       {
@@ -73,7 +74,7 @@ const HomeScreen = () => {
         paginate={paginate}
       />
       <Bar
-        data={state}
+        data={chart}
         options={{
           title: {
             display: true,
