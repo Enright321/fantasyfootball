@@ -38,6 +38,11 @@ a:hover {
   background-color: var(--primary-dark);
 }
 
+header img {
+  width: 70%;
+  height: 70%;
+}
+
 .bg {
   background-color: var(--primary-light);
 }
@@ -78,7 +83,6 @@ div.row {
 .flex {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
 }
 
 /* Media Queries */

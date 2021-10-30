@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { getFCP } from 'web-vitals';
+// import { getFCP } from 'web-vitals';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -11,4 +11,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-getFCP(console.log);
+// getFCP(console.log);
