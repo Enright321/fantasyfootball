@@ -3346,4 +3346,5 @@ const freeAgentQB = [
   },
 ];
 
-module.exports = freeAgentQB;
+// module.exports = freeAgentQB;
+export default freeAgentQB;

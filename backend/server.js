@@ -6,7 +6,7 @@ import onTheRise from './data/onTheRise.js';
 import ownedAbove from './data/ownedAbove.js';
 import gameScores from './data/gameScores.js';
 import matchScores from './data/matchScores.js';
-// import freeAgentQB from './data/freeAgentQB.js';
+import freeAgentQB from './data/freeAgentQB.js';
 
 dotenv.config();
 
@@ -28,9 +28,9 @@ app.get('/api/gameScores', (req, res) => {
 app.get('/api/matchScores', (req, res) => {
   res.json(matchScores);
 });
-// app.get('/api/freeAgentQB', (req, res) => {
-//   res.json(freeAgentQB);
-// });
+app.get('/api/freeAgentQB', (req, res) => {
+  res.json(freeAgentQB);
+});
 
 const __dirname = path.resolve();
 

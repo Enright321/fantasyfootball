@@ -15,7 +15,12 @@ const Teams = ({ teams, loading }) =>
                 <strong>Position {team.playoffSeed}</strong>
               </Card.Title>
               <Link to={`/team/${team.id}`} className='text-center'>
-                <Card.Img src={team.logoURL} className='logo' variant='top' />
+                <Card.Img
+                  src={team.logoURL}
+                  className='logo'
+                  variant='top'
+                  alt='team logo'
+                />
               </Link>
               <Card.Body className='text-center'>
                 <Link to={`/team/${team.id}`}>

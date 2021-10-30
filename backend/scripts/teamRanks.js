@@ -1,8 +1,12 @@
-const { Client } = require('espn-fantasy-football-api/node'); // node
-const fs = require('fs');
-const path = require('path');
+// const { Client } = require('espn-fantasy-football-api/node');
+import Client from 'espn-fantasy-football-api/node.js';
+// const fs = require('fs');
+import fs from 'fs';
+import path from 'path';
+// const path = require('path');
+import dotenv from 'dotenv';
 
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 
 dotenv.config();
 
