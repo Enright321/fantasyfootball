@@ -4,7 +4,7 @@ const teamRanks = [
     seasonId: 2021,
     id: 10,
     abbreviation: 'STLD',
-    name: 'STL Dick Droppers🍆',
+    name: 'STL Droppers🍆',
     logoURL:
       'https://g.espncdn.com/lm-static/logo-packs/core/DIS_Avengers_EndGame/DIS_Avengers_EndGame_Thanos.svg',
     roster: [
@@ -3284,7 +3284,7 @@ const teamRanks = [
     seasonId: 2021,
     id: 7,
     abbreviation: 'SKIP',
-    name: 'Skinny Penis',
+    name: 'Skinny P',
     logoURL: 'https://i1.sndcdn.com/avatars-000616727430-47my57-t240x240.jpg',
     roster: [
       {
