@@ -19,19 +19,19 @@ const Header = () => {
               id='basic-navbar-nav'
             >
               <Nav className='ms-auto'>
-                <LinkContainer to='/' style={{ color: '#55acee' }}>
+                <LinkContainer to='/' className='nav-color'>
                   <Nav.Link className='links'>
-                    <i>2021</i>
+                    <i className='nav-color'>2021</i>
                   </Nav.Link>
                 </LinkContainer>
-                <LinkContainer to='/' style={{ color: '#55acee' }}>
+                <LinkContainer to='/'>
                   <Nav.Link className='links'>
-                    <i>2020</i>
+                    <i className='nav-color'>2020</i>
                   </Nav.Link>
                 </LinkContainer>
-                <LinkContainer to='/' style={{ color: '#55acee' }}>
+                <LinkContainer to='/'>
                   <Nav.Link className='links'>
-                    <i>2019</i>
+                    <i className='nav-color'>2019</i>
                   </Nav.Link>
                 </LinkContainer>
               </Nav>
@@ -39,7 +39,7 @@ const Header = () => {
           </Container>
         </Navbar>
       </header>
-      <Navbar style={{ backgroundColor: '#55acee' }}>
+      <Navbar className='nav-bg'>
         <Container>
           <Nav className='m-auto'>
             <LinkContainer to='/gamescores'>

@@ -30,18 +30,30 @@ const TeamDetailsScreen = ({ match }) => {
               <div>
                 <ul>
                   <li>
-                    ({teamStat.abbreviation}) {teamStat.name}
-                  </li>
-                  <li>Rank: {teamStat.playoffSeed}</li>
-                  <li>
-                    Points For: {teamStat.totalPointsScored.toFixed(2)} Points
-                    Against: {teamStat.regularSeasonPointsAgainst.toFixed(2)}
+                    <strong>
+                      ({teamStat.abbreviation}) {teamStat.name}
+                    </strong>
                   </li>
                   <li>
-                    Record: {teamStat.wins} - {teamStat.losses} -{' '}
-                    {teamStat.ties}
+                    <strong>Rank: {teamStat.playoffSeed}</strong>
                   </li>
-                  <li>Win Percentage: {teamStat.winningPercentage}%</li>
+                  <li>
+                    <strong>
+                      Points For: {teamStat.totalPointsScored.toFixed(2)} Points
+                      Against: {teamStat.regularSeasonPointsAgainst.toFixed(2)}
+                    </strong>
+                  </li>
+                  <li>
+                    <strong>
+                      Record: {teamStat.wins} - {teamStat.losses} -{' '}
+                      {teamStat.ties}
+                    </strong>
+                  </li>
+                  <li>
+                    <strong>
+                      Win Percentage: {teamStat.winningPercentage}%
+                    </strong>
+                  </li>
                 </ul>
                 <h2>Roster</h2>
                 <Table striped bordered hover variant='dark' responsive>

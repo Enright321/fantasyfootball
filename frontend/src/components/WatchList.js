@@ -1,41 +1,64 @@
 import React from 'react';
-import { Card, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const WatchList = ({ freeAgents, loading }) =>
   loading ? (
     <h2>Loading...</h2>
   ) : (
-    <div>
-      <Row>
-        {Object.values(freeAgents).map((freeAgent) => (
-          <Col key={freeAgent.player.id} sm={12} md={6} lg={5} xl={3}>
-            <Card className='m-3 p-3 rounded card'>
-              <Link to={`/freeAgent/${freeAgent.id}`}>
-                <Card.Title className='text-center font'>
-                  <strong>{freeAgent.player.fullName}</strong>
-                </Card.Title>
-              </Link>
-              <Card.Body className='text-center'>
-                <Card.Title as='div' className='text-center'>
+    <div className='swiper'>
+      <Swiper
+        breakpoints={{
+          100: {
+            centeredSlides: true,
+            slidesPerView: 1,
+          },
+          450: {
+            centeredSlides: true,
+            slidesPerView: 2,
+          },
+          780: {
+            centeredSlides: true,
+            slidesPerView: 3,
+          },
+          1000: {
+            centeredSlides: true,
+            slidesPerView: 4,
+          },
+        }}
+        spaceBetween={20}
+        slidesPerView={3}
+        centeredSlidesBounds
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        {freeAgents.map((freeAgent) => (
+          <SwiperSlide key={freeAgent.id} className='slide'>
+            <div className='slide-content'>
+              <h5 style={{ padding: '.25rem 0' }}>
+                {freeAgent.player.fullName}
+              </h5>
+              <ul>
+                <li>
                   <strong>{freeAgent.player.proTeam}</strong>
-                </Card.Title>
+                </li>
 
-                <ul>
-                  <hr style={{ backgroundColor: 'white' }} />
-                  <li className='text-center'>
-                    Position: {freeAgent.player.defaultPosition}
-                  </li>
-                  <hr />
-                  <li className='text-center'>
-                    % Change: {freeAgent.player.percentChange.toFixed(2)}
-                  </li>
-                </ul>
-              </Card.Body>
-            </Card>
-          </Col>
+                <li>Position: {freeAgent.player.defaultPosition}</li>
+
+                <li>% Change: {freeAgent.player.percentChange.toFixed(2)}</li>
+              </ul>
+            </div>
+          </SwiperSlide>
         ))}
-      </Row>
+      </Swiper>
     </div>
   );
 

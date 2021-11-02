@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Teams from '../components/Teams';
-import Pagination from '../components/Pagination';
 import PopoverInfo from '../components/PopoverInfo';
 import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
@@ -8,8 +7,6 @@ import axios from 'axios';
 const HomeScreen = () => {
   const [teams, setTeams] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(4);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,13 +17,6 @@ const HomeScreen = () => {
     };
     fetchData();
   }, []);
-
-  // Get Current Posts
-  const indexOfLastPost = currentPage * itemsPerPage;
-  const indexOfFirstPost = indexOfLastPost - itemsPerPage;
-  const currentTeams = teams.slice(indexOfFirstPost, indexOfLastPost);
-
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   // popover
   const leagueTitle = 'LeaderBoard';
@@ -67,12 +57,8 @@ const HomeScreen = () => {
         <h1>LEADERBOARD</h1>
         <PopoverInfo info={leagueInfo} title={leagueTitle} />
       </div>
-      <Teams teams={currentTeams} loading={loading} />
-      <Pagination
-        itemsPerPage={itemsPerPage}
-        totalCards={teams.length}
-        paginate={paginate}
-      />
+      <Teams teams={teams} loading={loading} />
+
       <Bar
         data={chart}
         options={{
@@ -85,6 +71,7 @@ const HomeScreen = () => {
             display: true,
             position: 'right',
           },
+          responsive: true,
         }}
       />
     </>

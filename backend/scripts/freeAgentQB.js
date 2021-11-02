@@ -24,10 +24,10 @@ const run = async () => {
   let freeAgentQB = data
     .filter((fa) => fa.player.defaultPosition === 'TQB' && data)
     .sort((a, b) => b.projectedRawStats.passingYards - a.player.passingYards);
-  // console.log(freeAgentQB.slice(0, 5));
+  let topten = freeAgentQB.slice(0, 5);
 
   // convert to json string and writes to js file
-  let objToJson = JSON.stringify(freeAgentQB);
+  let objToJson = JSON.stringify(topten);
   fs.writeFile(
     path.join(__dirname, '../data', 'freeAgentQB.js'),
     objToJson,
