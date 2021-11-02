@@ -1,4 +1,7 @@
-const { Client } = require('espn-fantasy-football-api/node'); // node
+const { Client } = require('espn-fantasy-football-api/node');
+
+// import { Client } from 'espn-fantasy-football-api/node.js';
+
 const fs = require('fs');
 const path = require('path');
 const dotenv = require('dotenv');
@@ -24,7 +27,7 @@ const run = async () => {
   let freeAgentQB = data
     .filter((fa) => fa.player.defaultPosition === 'TQB' && data)
     .sort((a, b) => b.projectedRawStats.passingYards - a.player.passingYards);
-  let topten = freeAgentQB.slice(0, 5);
+  let topten = freeAgentQB.slice(0, 10);
 
   // convert to json string and writes to js file
   let objToJson = JSON.stringify(topten);

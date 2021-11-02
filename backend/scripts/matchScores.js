@@ -13,8 +13,8 @@ myClient.setCookies({
 
 const boxScore = myClient.getBoxscoreForWeek({
   seasonId: 2021,
-  matchupPeriodId: 6,
-  scoringPeriodId: 6,
+  matchupPeriodId: 8,
+  scoringPeriodId: 8,
 });
 
 const run = async () => {

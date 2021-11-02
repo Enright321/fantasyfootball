@@ -1,12 +1,21 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import path from 'path';
-import teamRanks from './data/teamRanks.js';
-import onTheRise from './data/onTheRise.js';
-import ownedAbove from './data/ownedAbove.js';
-import gameScores from './data/gameScores.js';
-import matchScores from './data/matchScores.js';
-import freeAgentQB from './data/freeAgentQB.js';
+// import express from 'express';
+const express = require('express');
+// import dotenv from 'dotenv';
+const dotenv = require('dotenv');
+// import path from 'path';
+const path = require('path');
+// import teamRanks from './data/teamRanks.js';
+const teamRanks = require('./data/teamRanks');
+// import onTheRise from './data/onTheRise.js';
+const onTheRise = require('./data/onTheRise');
+// import ownedAbove from './data/ownedAbove';
+const ownedAbove = require('./data/ownedAbove');
+// import gameScores from './data/gameScores.js';
+const gameScores = require('./data/gameScores');
+// import matchScores from './data/matchScores.js';
+const matchScores = require('./data/matchScores');
+// import freeAgentQB from './data/freeAgentQB.js';
+const freeAgentQB = require('./data/freeAgentQB');
 
 dotenv.config();
 
@@ -32,7 +41,7 @@ app.get('/api/freeAgentQB', (req, res) => {
   res.json(freeAgentQB);
 });
 
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '/frontend/build')));

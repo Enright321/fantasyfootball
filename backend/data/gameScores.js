@@ -352,5 +352,4 @@ const gameScores = [
     },
   },
 ];
-
-export default gameScores;
+module.exports = gameScores;

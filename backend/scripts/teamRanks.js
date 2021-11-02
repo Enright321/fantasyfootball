@@ -1,12 +1,9 @@
-// const { Client } = require('espn-fantasy-football-api/node');
-import Client from 'espn-fantasy-football-api/node.js';
-// const fs = require('fs');
-import fs from 'fs';
-import path from 'path';
-// const path = require('path');
-import dotenv from 'dotenv';
+const { Client } = require('espn-fantasy-football-api/node');
+const fs = require('fs');
 
-// const dotenv = require('dotenv');
+const path = require('path');
+
+const dotenv = require('dotenv');
 
 dotenv.config();
 
@@ -25,7 +22,7 @@ const run = async () => {
   const data = await teams;
 
   let teamRanks = data.sort((a, b) => a.playoffSeed - b.playoffSeed);
-  console.log(teamRanks);
+  // console.log(teamRanks);
 
   // convert to json and writes to js file
   let objToJson = JSON.stringify(teamRanks);
