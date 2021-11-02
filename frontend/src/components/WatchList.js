@@ -37,11 +37,9 @@ const WatchList = ({ freeAgents, loading }) =>
         navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {freeAgents.map((freeAgent) => (
-          <SwiperSlide key={freeAgent.id} className='slide'>
+          <SwiperSlide className='slide' key={freeAgent.player.id}>
             <div className='slide-content'>
               <h5 style={{ padding: '.25rem 0' }}>
                 {freeAgent.player.fullName}

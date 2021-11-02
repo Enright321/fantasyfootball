@@ -37,8 +37,6 @@ const Teams = ({ teams, loading }) =>
         navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {teams.map((team) => (
           <SwiperSlide key={team.id} className='slide'>

@@ -23,7 +23,6 @@ const run = async () => {
   const data = await games;
   let gameScores = data.sort((a, b) => b.startTime - a.startTime);
   let newScores = gameScores.slice(0, 16);
-  // console.log(newScores);
 
   let gameStats = JSON.stringify(newScores);
   fs.writeFile(

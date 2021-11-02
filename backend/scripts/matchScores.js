@@ -19,7 +19,6 @@ const boxScore = myClient.getBoxscoreForWeek({
 
 const run = async () => {
   const matchScores = await boxScore;
-  // console.log(matchScores);
 
   // convert to json string and writes to js file
   let objToJson = JSON.stringify(matchScores);

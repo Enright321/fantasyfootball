@@ -22,7 +22,6 @@ const run = async () => {
   const data = await teams;
 
   let teamRanks = data.sort((a, b) => a.playoffSeed - b.playoffSeed);
-  // console.log(teamRanks);
 
   // convert to json and writes to js file
   let objToJson = JSON.stringify(teamRanks);

@@ -26,7 +26,6 @@ const run = async () => {
   const percentChange = data
     .filter((fa) => fa.player.percentChange > 5 && data)
     .sort((a, b) => b.player.percentChange - a.player.percentChange);
-  // console.log(percentChange);
 
   // convert to json and writes to json file
   let objToJson = JSON.stringify(percentChange);

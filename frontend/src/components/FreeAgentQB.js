@@ -36,8 +36,6 @@ const FreeAgentQB = ({ qb, loading }) =>
         navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {qb.map((freeAgent) => (
           <SwiperSlide key={freeAgent.id} className='slide'>

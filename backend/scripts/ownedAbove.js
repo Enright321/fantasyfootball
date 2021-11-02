@@ -26,7 +26,6 @@ const run = async () => {
   const ownedAbove = percentOwned
     .filter((fa) => fa.player.percentOwned > 50 && data)
     .sort((a, b) => b.player.percentOwned - a.player.percentOwned);
-  // console.log(ownedAbove);
 
   // convert to json and writes to json file
   let objToJson = JSON.stringify(ownedAbove);
